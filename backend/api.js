@@ -15,7 +15,7 @@ const db2 = mysql.createConnection({
     user: 'root',
     password: '',
     port: '3306',
-    database: 'nigeria'
+    database: 'kenya'
 });
 //const db = require(./db);
 const express = require("express");
