@@ -1,0 +1,27 @@
+{
+  "database": {
+    "host": "localhost",
+    "username": "root",
+    "password": "",
+    "port": 3306,
+    "databaseName": "nigeria"
+  },
+  "odbc": {
+    "DSN":"mssql_odbc_ug",
+    "UID": "3sdlabour",
+    "PWD": "Abc123@@@"
+  },
+  "server": {
+    "port": 4000,
+    "host": "192.168.29.243"
+  },
+  "auth": {
+    "secretKey": "Srr@1234"
+  },
+  "storage": {
+    "company": "../frontend/public/company/"
+  },
+  "dateUtil": {
+    "timezone": "Africa/Lagos"
+  }
+}

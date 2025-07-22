@@ -1,0 +1,70 @@
+{
+  "name": "reacterp",
+  "version": "0.1.0",
+  "description": "Nigeria",
+  "homepage": "/Nigeria/",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.1",
+    "bootstrap": "^5.3.2",
+    "caniuse-lite": "^1.0.30001564",
+    "clipboard": "^2.0.11",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "csv-export": "^1.0.2",
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "datatables.net": "^1.13.4",
+    "datatables.net-buttons": "^2.3.6",
+    "datatables.net-buttons-dt": "^2.3.6",
+    "datatables.net-dt": "^1.13.4",
+    "datatables.net-editor": "^2.2.2",
+    "express": "^4.18.2",
+    "file-saver": "^2.0.5",
+    "jquery": "^3.7.1",
+    "jsonwebtoken": "^9.0.2",
+    "jszip": "^3.10.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "owl.carousel": "^2.3.4",
+    "pdfmake": "^0.2.7",
+    "react": "^18.2.0",
+    "react-datepicker": "^4.12.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.3.4",
+    "react-scripts": "5.0.1",
+    "react-select": "^5.7.3",
+    "react-time-picker": "^6.5.2",
+    "sqlstring": "^2.3.3",
+    "web-vitals": "^2.1.4"
+  },
+  "proxy": "http://localhost:4000",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
