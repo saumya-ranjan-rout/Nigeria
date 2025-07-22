@@ -84,7 +84,7 @@ export function DataAccuracy() {
   });
 
  const handleEdit = (id) => {
-    //history.push(`/employeetimesheet/editotalist/${id}`);
+    history.push(`/employeetimesheet/editotalist/${id}`);
   };
 
   const handleInputChange = (event) => {

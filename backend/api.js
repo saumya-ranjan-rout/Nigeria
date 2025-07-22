@@ -2015,19 +2015,48 @@ app.post('/update_company', (req, res) => {
 
 
 //Company profile upload
-const storage1 = multer.diskStorage({
+// const storage1 = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     const uploadPath = path.resolve(__dirname, '../src/component/CompanyLogo')
+//     cb(null, uploadPath)
+//   },
+//   filename: (req, file, cb) => {
+//     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9)
+//     const originalExtension = path.extname(file.originalname)
+//     cb(null, file.fieldname + '-' + uniqueSuffix + originalExtension)
+//   },
+// })
+
+// const upload_Path = multer({ storage: storage1 }) // Destination folder for file uploads
+
+// Configure Multer to specify where to store uploaded files
+const logo_storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    const uploadPath = path.resolve(__dirname, '../src/component/CompanyLogo')
-    cb(null, uploadPath)
+    cb(null, path.join(__dirname, '../frontend/public/company/'));
   },
   filename: (req, file, cb) => {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9)
-    const originalExtension = path.extname(file.originalname)
-    cb(null, file.fieldname + '-' + uniqueSuffix + originalExtension)
+    const randomNumber = Math.floor(Math.random() * 90000) + 10000;
+    const fileExtension = file.originalname.split('.').pop();
+    const uniqueFilename = `${randomNumber}.${fileExtension}`;
+    cb(null, uniqueFilename);
   },
-})
+});
 
-const upload_Path = multer({ storage: storage1 }) // Destination folder for file uploads
+const upload_Path = multer({ storage: logo_storage });
+
+app.post('/company/upload-logo', upload_Path.single('image'), (req, res) => {
+  const uploadedFilename = req.file.filename;
+
+  const query = 'UPDATE geopos_system SET logo=? WHERE id = ?';
+  db.query(query, [uploadedFilename, 1], (err, result) => {
+    if (err) {
+      console.error('Error executing MySQL query:', err);
+      res.status(500).json({ error: 'Error uploading file' });
+    } else {
+      res.json({ message: 'File uploaded successfully' });
+    }
+  });
+});
 
 app.post('/company_profile', upload_Path.single('file'), (req, res) => {
   const file = req.file

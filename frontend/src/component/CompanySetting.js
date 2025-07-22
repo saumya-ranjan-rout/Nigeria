@@ -7,7 +7,8 @@ import Header from './Header';
 import $ from 'jquery';
 import DatePicker from 'react-datepicker';
   import 'react-datepicker/dist/react-datepicker.css';
-
+  import axios from 'axios';
+import config from '../config';
 export function CompanySetting(props) {
 
   let red = {
@@ -22,6 +23,38 @@ export function CompanySetting(props) {
  const [selectedLanguage, setSelectedLanguage] = useState('');
  const history = useHistory();
   const [cdetails, setCdetails] = useState('');
+    const [file, setFile] = useState(null);
+
+
+    const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+const handleUpload = async () => {
+  if (file) {
+    const formData = new FormData();
+    formData.append('image', file);
+
+    $.ajax({
+      url: 'http://192.168.29.243:4000/company/upload-logo',
+      method: 'POST',
+      data: formData,
+      processData: false, // Must be false
+      contentType: false, // Must be false
+      success: function (response) {
+        alert(response.message);
+        window.location.reload();
+      },
+      error: function (xhr, status, error) {
+        alert('Failed to upload logo');
+        console.error('Upload error:', error);
+      },
+    });
+  } else {
+    console.error('No file selected');
+  }
+};
+
+
 
  //form update
  const [formData, setFormData] = useState({
@@ -287,20 +320,24 @@ export function CompanySetting(props) {
 
                                     <input type="hidden" name="id" value="1"/>
                                     <div className="ibox-content no-padding border-left-right">
-                                        <img alt="image" id="dpic" className="col"
-                                             src="http://localhost/nigeria_aug/userfiles/company/16295619241755404190.png?t=72" style={{ width: '80%', height: 'auto' }} />
+                                          <img alt="image" id="dpic" className="col" src={`${config.appUrl}/company/${formData.logo}`} />
+                                        
                                     </div>
 
                                     <hr></hr>
-                                    <p>
-                                        <label for="fileupload"></label><input
-                                                id="fileupload" type="file"
-                                                name="files[]"/></p>
-                                    <pre>Recommended logo size is 500x200px.</pre>
-                                    <div id="progress" className="progress progress-sm mt-1 mb-0">
-                                        <div className="progress-bar bg-success" role="progressbar" 
-                                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
+                     <p>
+                    <label for="fileupload"></label>
+                    {/* <input id="fileupload" type="file" name="files[]"/> */}
+                    <div>
+                      <input type="file" name='image' onChange={handleFileChange} />
+                      <button className='btn btn-primary' onClick={handleUpload}>Upload</button>
+                    </div>
+                  </p>
+                  <pre>Recommended logo size is 500x200px.</pre>
+                  <div id="progress" className="progress progress-sm mt-1 mb-0">
+                    <div className="progress-bar bg-success" role="progressbar"
+                      aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
 
                                 </div>
                             </form>
