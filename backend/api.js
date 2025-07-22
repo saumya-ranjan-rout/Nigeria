@@ -10,7 +10,13 @@ const db = mysql.createConnection({
 
 module.exports = db;
 
-
+const db2 = mysql.createConnection({
+    host: 'localhost', 
+    user: 'root',
+    password: '',
+    port: '3306',
+    database: 'nigeria'
+});
 //const db = require(./db);
 const express = require("express");
 const cors = require('cors');
