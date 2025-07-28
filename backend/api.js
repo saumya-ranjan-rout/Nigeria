@@ -30305,6 +30305,23 @@ function queryDatabase(connection, sql) {
   });
 } */ 
 
+
+  //saumya start
+app.get('/worker-type', (req, res) => {
+  // Fetch all categories
+  db.query('SELECT * FROM geopos_workertype', (err, results) => {
+    if (err) {
+      console.error('Failed to fetch categories:', err);
+      res.status(500).json({ error: 'Failed to fetch categories' });
+    } else {
+     
+    res.send(results);
+    }
+  });
+});
+
+
+  //saumya end
 /**********************************Get Attendance*********************************************/
 
 //  app.listen(4000);
