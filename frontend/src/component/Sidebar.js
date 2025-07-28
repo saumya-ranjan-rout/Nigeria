@@ -219,6 +219,12 @@ export function Sidebar() {
                       <span class="d-none d-sm-inline">Admin</span> 
                     </a>
                   </li>
+
+                    <li class="w-100">
+                    <a href="/hrm/addemployee/" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Add Employee</span> 
+                    </a>
+                  </li>
                   <li className="w-100">
                     <a href="#" className={`nav-link px-0 ${isIKEJAHrmMenuOpen ? 'show' : ''}`} onClick={handleIKEJAHrmClick}>
                       <span className="d-none d-sm-inline"><i className="bx bxs-hourglass-bottom"></i> IKEJA</span> <i className="bx bxs-chevron-right dropdown-icon"></i>

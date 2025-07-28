@@ -1,0 +1,41 @@
+[33mcommit 302de1facd90870cf271169c8d795ea250093ad8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: saumya-ranjan-rout <saumyarout229@gmail.com>
+Date:   Fri Jul 25 18:27:19 2025 +0530
+
+    Your commit message here
+
+backend/{
+frontend/public/company/10525.jpg
+frontend/public/company/11015.jpg
+frontend/public/company/23726.jpg
+frontend/public/company/25447.jpg
+frontend/public/company/26830.jpg
+frontend/public/company/28579.jpg
+frontend/public/company/29722.jpg
+frontend/public/company/30203.jpg
+frontend/public/company/34547.jpg
+frontend/public/company/40795.jpg
+frontend/public/company/41055.jpg
+frontend/public/company/41895.jpg
+frontend/public/company/43825.jpg
+frontend/public/company/51244.jpg
+frontend/public/company/54379.jpg
+frontend/public/company/57824.jpg
+frontend/public/company/59679.jpg
+frontend/public/company/61010.jpg
+frontend/public/company/61039.jpg
+frontend/public/company/66190.PNG
+frontend/public/company/67494.jpg
+frontend/public/company/68182.jpg
+frontend/public/company/70186.jpg
+frontend/public/company/72056.jpg
+frontend/public/company/72195.jpg
+frontend/public/company/73536.jpg
+frontend/public/company/74576.jpg
+frontend/public/company/77428.avif
+frontend/public/company/82275.jpg
+frontend/public/company/87678.jpg
+frontend/public/company/89816.jpg
+frontend/public/company/90277.jpg
+frontend/public/company/97678.jpg
+frontend/src/component/Hrm/Employees/AddNewEmployeeComponent.js

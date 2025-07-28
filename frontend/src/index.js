@@ -74,6 +74,8 @@ import AddNewAdminComponent from './component/Hrm/ADMIN/AddNewAdminComponent';
 import ViewAdmin from './component/Hrm/ADMIN/ViewAdmin';
 import EditAdmin from './component/Hrm/ADMIN/EditAdmin';
 import AdminChangePassword from './component/Hrm/ADMIN/AdminChangePassword';
+
+import AddNewEmployeeComponent from './component/Hrm/Employees/AddNewEmployeeComponent';
 //EKEJA START
 //operator
 import OperatorComponentIkeja from './component/Hrm/IKEJA/Operator/OperatorComponent';
@@ -353,6 +355,7 @@ root.render(
     <Route exact path="/hrm/view_admin/:id" component={ViewAdmin} />
     <Route exact path="/hrm/update_admin/:id" component={EditAdmin} />
     <Route exact path="/hrm/updateadminpassword/:id" component={AdminChangePassword} />
+        <Route exact path="/hrm/addemployee/" component={AddNewEmployeeComponent} />
     {/* IKEJA START */} 
     <Route exact path="/hrm/ikeja/operator" component={OperatorComponentIkeja} />
     <Route exact path="/hrm/ikeja/addoperator" component={AddOperatorComponentIkeja} />
